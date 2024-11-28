@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav button {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  transition: 0.1s;
+  display: grid;
+  place-items: center;
+}
+
+.nav svg {
+  color: inherit;
+  width: 0.5rem;
+  right: 0.5rem;
+}
+
+.pagNumber {
+  width: 2rem;
+}
+
+.nav button:hover {
+  color: var(--cor-4);
+}
+
+.currPage {
+  border-radius: 0.2rem;
+  background: var(--cor-5);
+  color: var(--cor-4);
+}
+
+@media all and (max-width: 550px) {
+  .nav {
+    justify-content: center;
+  }
+}

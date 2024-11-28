@@ -1,0 +1,26 @@
+.button {
+  padding: 1rem;
+  background-color: var(--cor-5);
+  color: var(--cor-4);
+  border: none;
+  transition: 0.1s;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.button:hover {
+  background-color: var(--cor-2);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+@media all and (max-width: 700px) {
+  .button:hover {
+    transform: scale(1);
+  }
+}

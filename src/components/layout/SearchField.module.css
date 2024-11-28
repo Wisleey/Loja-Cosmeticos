@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  max-width: 20rem;
+  width: 100%;
+  position: relative;
+}
+
+.form input {
+  margin-right: 0.5rem;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.form input:focus {
+  box-shadow: 0 0 0 1px var(--cor-5);
+}
+
+.form input::placeholder {
+  color: var(--cor-3);
+}
+
+.form label {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.btn {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.iconSearch {
+  color: var(--cor-4);
+  width: 1rem;
+  height: 1rem;
+}
+
+@media all and (max-width: 480px) {
+  .iconSearch {
+    color: var(--cor-4);
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .form {
+    grid-row: 2;
+    grid-column: 1 / 4;
+    max-width: 100%;
+    border-top: var(--border);
+    padding-top: 0.5rem;
+  }
+}

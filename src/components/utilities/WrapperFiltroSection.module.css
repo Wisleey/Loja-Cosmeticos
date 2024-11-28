@@ -1,0 +1,10 @@
+.section + .section {
+  padding-top: 2rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

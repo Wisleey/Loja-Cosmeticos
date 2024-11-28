@@ -1,0 +1,15 @@
+.modal {
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  margin-top: 2rem;
+}
