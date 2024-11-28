@@ -1,8 +1,8 @@
-# Lojinha Cactus
+# Loja Mesoestetic Cosmeticos
 
 Projeto de uma página de catálogo de uma loja, feito em React JS, HTML e CSS.  
   
-![página](https://github.com/aridsm/lojinha-cactus/blob/master/public/lojinha.gif)
+
 
 
 ## Finalidade
@@ -18,4 +18,4 @@ O website foi feito, principalmente, para a prática de hooks como useContext e 
 - Campo de busca e de conta do usuário, ambos apenas para estilização.
 - e mais!  
 
-ACESSE: https://aridsm.github.io/lojinha-cactus/
+
