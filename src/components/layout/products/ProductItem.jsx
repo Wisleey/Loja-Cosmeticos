@@ -10,6 +10,11 @@ const ProductItem = ({ name, img, price, description }) => {
   const animaTimeout = useRef();
   const { addItem } = useContext(CartContext);
   const { showAlert } = useContext(AlertContext);
+  const slugify = (text) =>
+    text
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
 
   const addItemToCartHandler = (e) => {
     e.preventDefault();
@@ -26,16 +31,16 @@ const ProductItem = ({ name, img, price, description }) => {
   return (
     <li className={classes.card}>
       <div className={classes.imgContainer}>
-      <Link to={`/product/${name}`}>
-  <img
-    src={require(`../../../assets/imgs-produtos/${img}`)}
-    alt={name}
-  />
-</Link>
+        <Link to={`/product/${slugify(name)}`}>
+          <img
+            src={require(`../../../assets/imgs-produtos/${img}`)}
+            alt={name}
+          />
+        </Link>
       </div>
       <div className={classes.infos}>
         <div>
-          <Link to={`/product/${name}`}>
+          <Link to={`/product/${slugify(name)}`}>
             <p className={classes.name}>{name}</p>
           </Link>
           <p className={classes.description} title={description}>
