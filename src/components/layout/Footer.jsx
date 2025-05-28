@@ -3,7 +3,6 @@ import classes from "./Footer.module.css";
 import { ReactComponent as IconGithub } from "../../assets/github.svg";
 
 const Footer = ({ isDarkMode }) => {
-  // Recebe isDarkMode como prop
   return (
     <footer
       className={`${classes.footer} ${isDarkMode ? classes.darkMode : ""}`}

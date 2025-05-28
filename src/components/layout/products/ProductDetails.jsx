@@ -129,39 +129,81 @@ Total: R$ ${(productData.price * amount).toFixed(2)}`;
           >
             <h1 className="brand-name">{productData.name}</h1>
             <p className="price">R$ {productData.price}</p>
-            <p className="description">{productData.description}</p>
 
-            <ul className="product-infos">
-              <li>🚚 Entrega para todo o Brasil</li>
-              <li>🔒 Compra segura</li>
-              <li>↩️ Devolução garantida</li>
-            </ul>
+            <div className="product-description">
+              <h2>Descrição do Produto</h2>
+              <p>{productData.description}</p>
+            </div>
+
+            <div className="product-benefits">
+              <h2>Benefícios</h2>
+              <ul>
+                {productData.benefits.map((benefit, index) => (
+                  <li key={index}>
+                    <span className="benefit-icon">✓</span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="product-features">
+              <h2>Características</h2>
+              <ul className="product-infos">
+                <li>🚚 Entrega Expressa para todo o Brasil</li>
+                <li>🔒 Compra 100% Segura</li>
+                <li>↩️ Garantia de Satisfação</li>
+                <li>💊 Produto Original</li>
+                <li>👩‍⚕️ Aprovado por Dermatologistas</li>
+              </ul>
+            </div>
 
             <div className="buy-options">
-              <label htmlFor="quantity">Quantidade:</label>
-              <input
-                id="quantity"
-                name="quantity"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                min={1}
-                className={isDarkMode ? "darkMode" : ""}
-              />
-              <button
-                className={`btnAdd ${isDarkMode ? "darkMode" : ""}`}
-                onClick={addItemToCartHandler}
-              >
-                +
-              </button>
+              <div className="quantity-selector">
+                <label htmlFor="quantity">Quantidade:</label>
+                <div className="quantity-controls">
+                  <button
+                    className={`quantity-btn ${isDarkMode ? "darkMode" : ""}`}
+                    onClick={() => setAmount(Math.max(1, amount - 1))}
+                  >
+                    -
+                  </button>
+                  <input
+                    id="quantity"
+                    name="quantity"
+                    type="number"
+                    value={amount}
+                    onChange={(e) =>
+                      setAmount(Math.max(1, parseInt(e.target.value) || 1))
+                    }
+                    min={1}
+                    className={isDarkMode ? "darkMode" : ""}
+                  />
+                  <button
+                    className={`quantity-btn ${isDarkMode ? "darkMode" : ""}`}
+                    onClick={() => setAmount(amount + 1)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
 
-              <button
-                className={`btnBuyNow ${isDarkMode ? "darkMode" : ""}`}
-                onClick={finalizeDirectlyHandler}
-                title="Comprar agora"
-              >
-                Comprar agora
-              </button>
+              <div className="action-buttons">
+                <button
+                  className={`btnAdd ${isDarkMode ? "darkMode" : ""}`}
+                  onClick={addItemToCartHandler}
+                >
+                  Adicionar ao Carrinho
+                </button>
+
+                <button
+                  className={`btnBuyNow ${isDarkMode ? "darkMode" : ""}`}
+                  onClick={finalizeDirectlyHandler}
+                  title="Comprar agora"
+                >
+                  Comprar Agora
+                </button>
+              </div>
             </div>
           </motion.div>
         </motion.div>
